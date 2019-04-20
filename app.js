@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const app = express();
 const path = require('path');
 const port = 4000;
-const test3 = require('./test3') ;
+//const test3 = require('./test3') ;
+const reduxjs = require('./reduxJS/redux.js');
 
 const makePath = (dir, filename) => {
     return path.resolve(__dirname, '..', dir, filename);

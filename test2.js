@@ -4,14 +4,14 @@ let sum = 0;
 for (let n of numbers)
     sum += n;
 
-console.log(sum);
+console.log('sum -  ', sum);
 
 const sum2 = numbers.reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
 }, 1); //<< 0 to wartość startowa dla reducera
 
 
-console.log(sum2);
+console.log('sum2 -  ', sum2);
 
 const sumStrings = strings.reduce((accumulator, currentVal)=>{
     return accumulator + currentVal;
@@ -20,7 +20,7 @@ const sumStrings = strings.reduce((accumulator, currentVal)=>{
 console.log('sum strings', sumStrings);
 
 const threeDots = ['przemy',...strings];
-console.log(threeDots);
+console.log('threeDots', threeDots);
 
 const counter = {
     cnt: 0,
