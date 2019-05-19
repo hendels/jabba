@@ -73,3 +73,14 @@ Object.keys(foo)[0]
 //To get baz, use:
 
 foo[Object.keys(foo)[0]]
+
+//example
+const key = Object.keys(result.metadata[i])[0];
+const value = result.metadata[i][key];
+
+//In order to check if a specific key exists within a JavaScript object, you can use the Object.prototype.hasOwnProperty() method
+foo.hasOwnProperty('bar')
+
+
+
+//creating new object
