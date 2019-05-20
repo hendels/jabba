@@ -1,31 +1,3 @@
-const someObject = {
-    magicValue: 42,
-  };
-  const hugeObject = {
-    ...someObject,
-    someValue: 37,
-    deepObject: {
-      foo: [42, 43],
-    }
-  }
-  const overridenObject = {
-    ...hugeObject,
-    someValue: 24,
-    deepObject: {
-      someArray: [91, 21], // foo[] will be overridden
-    }
-  }
-  const notOverridenObject = {
-    ...hugeObject,
-    anotherValue: 37,
-    deepObject: {
-      ...hugeObject.deepObject, // extend nested object
-      someArray: [42, 43],
-    }
-  }
-
-  console.log(overridenObject);
-  console.log(notOverridenObject);
 
 // iterate through value and key
 const desiredMetadataElements = {
@@ -80,7 +52,3 @@ const value = result.metadata[i][key];
 
 //In order to check if a specific key exists within a JavaScript object, you can use the Object.prototype.hasOwnProperty() method
 foo.hasOwnProperty('bar')
-
-
-
-//creating new object

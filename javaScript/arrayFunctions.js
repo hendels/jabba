@@ -11,3 +11,6 @@ reduce()    // "Reduces" the array into single value (accumulator)
 // Others
 slice()     // Returns desired elements in a new array
 concat()    // Append one or more arrays with given array
+
+// searching
+includes(); // sprawdza czy dana tablica posiada szukany element - zwraca true / false

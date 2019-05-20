@@ -1,4 +1,4 @@
-const colors = require('./config/colors');
+const colors = require('../config/colors');
 
 console.log('============this=================');
 // THIS jest ODWOŁANIEM DO OBIEKTU, (obiektem może być np. window)
@@ -19,8 +19,8 @@ obj1.sayHello.call(obj2, 'call: ');
 // apply
 obj1.sayHello.apply(obj2, ['apply: ']);
 // bind
-var binded = obj1.sayHello.bind(obj2, 'bind: ');
-binded();
+var bindedFunction = obj1.sayHello.bind(obj2, 'bind: ');
+bindedFunction();
 // TODO - THIS w funkcjach tablicowych:
 
 
@@ -28,7 +28,7 @@ binded();
 // BROWSER USAGE
 console.log('============this in callback=================');
 thisInCallback = () => {
-    console.log(this); 
+    console.log('THIS for callback :::', this); 
 }
 thisInCallback();
 
@@ -41,4 +41,28 @@ var cat = {
     }
 }
 cat.jumps();
+/////////////////////////////////////////////////////
+const functionGlobalScope = function(table){
+    console.log('GLOBAL SCOPE :::', this.tableInObject, table)
+}
+const przemekRoom = {
+    tableInObject: 'RAW table',
+    cleanTable: function(){
+        console.log(`cleaning [${this.tableInObject}]`); // zwraca przemek table bo to funkcja czysta
+    },
+    cleanTableCallback: () => {
+        console.log(`cleaning callback [${this.tableInObject}]`); // zwraca undefined BO TO CALLBACK
+    },
+    functionInsideScope(){
+        functionGlobalScope(`[${przemekRoom.tableInObject}]`);
+    }
+
+}
+przemekRoom.cleanTable();
+przemekRoom.cleanTableCallback();
+przemekRoom.functionInsideScope();
+
+const binded = functionGlobalScope.bind(przemekRoom);
+
+binded('[BINDED table]');
 /////////////////////////////////////////////////////
