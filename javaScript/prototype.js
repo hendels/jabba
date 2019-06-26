@@ -14,3 +14,10 @@ Przemy.prototype.show = function(){
 
 p1.show();
 p2.show();
+
+// ENG
+
+/* 
+All JavaScript objects inherit properties and methods from a prototype.
+So by adding new object (object or function) to pr
+*/

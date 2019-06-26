@@ -1,23 +1,6 @@
 require('isomorphic-fetch');
 
-console.log('======reducer======');
 
-const arr = [2,6,5];
-
-const eloReduce = arr.reduce((x , y) => {
-    console.log(`x = ${x} / y = ${y}`);
-    return x + y
-});
-
-console.log(eloReduce);
-const arr2 = ['1', '33', '44'];
-
-const eloReduce2 = arr2.reduce((x , y) => {
-    console.log(`x = ${x} / y = ${y}`);
-    return x + y
-}, 'reducer2---');
-
-console.log(eloReduce2);
 console.log('======map======');
 const arr3 = ['1', '33', '44'];
 const morfed = arr3.map(x => {

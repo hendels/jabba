@@ -1,3 +1,7 @@
+/*
+Object - a collection of name value pairs
+*/
+
 /////////////////////////////////////////////////////
 const someObject = {
   magicValue: 42,
