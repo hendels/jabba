@@ -8,7 +8,7 @@ if (a === undefined){
     console.log('a is defined');
 }
 
-a = 'przemix'
+a = 'przemix';
 
 if (a === undefined){
     console.log('a is undefined');

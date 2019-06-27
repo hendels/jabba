@@ -1,4 +1,4 @@
-globalVar = 'globalVar';
+globalVar = 'global Przemy';
 
 function closures(){
     var parentVar = 'parentVar';
@@ -6,7 +6,7 @@ function closures(){
         console.log(`on function [BEFORE define] closureVar = ${closureVar}`);
         var closureVar = 'closureVar';
         console.log(`on function [AFTER define] closureVar = ${closureVar}`);
-        console.log(globalVar);
+        console.log('globalVar from closureFunction:::', globalVar);
         console.log(parentVar);
         console.log(closureVar);
     }

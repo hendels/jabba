@@ -25,18 +25,3 @@ fetch('https://jsonplaceholder.typicode.com/todos/1').then(
     response => response.json()
 ).then(json => console.log('FETCH ::: ', json))
 
-console.log('======to JSON======');
-function arrToJson(){ 
-    return '{"elo":           "object js"}'
-};
-console.log(arrToJson());
-const convert = JSON.parse(arrToJson());
-console.log(convert);
-const toString = JSON.stringify(convert);
-console.log(toString);
-console.log('======arrows again======');
-const arrowAgain = () => {
-    console.log(`return nothing`)
-    return "xxx"
-}
-console.log(arrowAgain());

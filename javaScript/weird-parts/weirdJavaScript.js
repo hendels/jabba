@@ -1,1 +1,0 @@
-// zrob sobie te '2' + 2 , jak to dziala 

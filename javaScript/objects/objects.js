@@ -1,5 +1,6 @@
 /*
 Object - a collection of name value pairs
+
 */
 
 /////////////////////////////////////////////////////
@@ -52,3 +53,22 @@ const counter2 = {
 }
 counter2.inc();
 /////////////////////////////////////////////////////
+const newObject = {...someObject};
+console.log('NEW OBJECT:::', newObject);
+/////////////////////////////////////////////////////
+var person = new Object(); // << there a better ways to do this
+// Computed member Access
+person['name'] = 'przemy' // is like >>> person.name = "przemy"
+
+var firstNameProperty = "name";
+console.log(person);
+console.log(person[firstNameProperty]);
+/////////////////////////////////////////////////////
+
+const immutableObject = {defaultValue: 'przemy'};
+immutableObject.itsPossible = true;
+immutableObject.itsPossible = false;
+immutableObject.defaultValue = 'jemy';
+console.log('sory its immutable :P', immutableObject);
+// what you can't
+// immutableObject = 2; << cannot assign something else to whole object

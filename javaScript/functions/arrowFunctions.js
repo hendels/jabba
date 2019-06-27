@@ -39,3 +39,10 @@ thisInCallback = () => {
     console.log(this); 
 }
 thisInCallback();
+/////////////////////////////////////////////////////
+console.log('======arrows again======');
+const arrowAgain = () => {
+    console.log(`return nothing`)
+    // return "xxx"
+}
+console.log(`returning from arrowFunction`, arrowAgain());
