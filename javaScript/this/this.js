@@ -1,4 +1,4 @@
-const colors = require('../config/colors');
+const colors = require('../../config/colors');
 
 console.log('============this=================');
 // THIS jest ODWOŁANIEM DO OBIEKTU, (obiektem może być np. window)
@@ -37,6 +37,7 @@ var cat = {
     lives: 9,
     jumps: function(){
         this.lives--;
+        console.log('THIS FOR CAT:::', this) // << odwołanie do obiektu
         console.log(this.lives) // << odwołanie do obiektu
     }
 }
@@ -49,9 +50,11 @@ const przemekRoom = {
     tableInObject: 'RAW table',
     cleanTable: function(){
         console.log(`cleaning [${this.tableInObject}]`); // zwraca przemek table bo to funkcja czysta
+        console.log(this);
     },
     cleanTableCallback: () => {
         console.log(`cleaning callback [${this.tableInObject}]`); // zwraca undefined BO TO CALLBACK
+        console.log(this);
     },
     functionInsideScope(){
         functionGlobalScope(`[${przemekRoom.tableInObject}]`);
@@ -66,3 +69,36 @@ const binded = functionGlobalScope.bind(przemekRoom);
 
 binded('[BINDED table]');
 /////////////////////////////////////////////////////
+var b = function() {
+    // console.log(`B this:::`, this);
+}
+b();
+/////////////////////////////////////////////////////
+var d = {
+    name: 'the d object',
+    log: function(){
+        var self = this; // < point variable to THIS OBJECT
+        self.name = 'Updated d object'; 
+        console.log(self); 
+
+        var setName = function(newName){
+            self.name = newName;
+        }
+        setName('updated again!');
+        console.log(self); 
+    }
+}
+d.log();
+/////////////////////////////////////////////////////
+function anotherThis(){
+    // console.log('another this:::', this); // < returns WINDOW.this
+
+}
+
+anotherThis();
+/////////////////////////////////////////////////////
+const arrowThis = (param) => {
+    console.log(param)
+    console.log('another arrow this:::', this);
+}
+arrowThis('przemy');

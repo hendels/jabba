@@ -7,7 +7,7 @@ The Object consists of:
 * object "property" [0x003] --- `PROPERTIES` has `VALUES`
 * function "method" [0x004]
 * it has property: _proto_: `Object` because it was created from class `new Object()`
-
+* all objects has `proto` property
 ```javascript
 // [in object.js]
 var person = new Object(); // << there a better ways to do this

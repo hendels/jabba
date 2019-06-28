@@ -1,6 +1,7 @@
 # FUNCTIONS ARE OBJECTS!!!
-* has name property : function.name = yourfunctionname;
-* has code property : function.code = yourcode;
+* has `name` property : function.name = yourfunctionname;
+* has `code` property : function.code = yourcode;
+* has `arguments` property: arguments.length;
 # Functions execution flow
 its created on initializing JS
 
@@ -41,6 +42,14 @@ function greet(){
 greet.language = 'english';
 
 ```
+## Callback function
+A function you give to another function, to be run when the other function is finished.
+
+`I give you a function and execute you - function - and you executes function which i gave you` - it's called callback.
+
+### examples
+`functions.js`
+
 # Function Expression
 A unit of code that results in a value
 ```javascript
@@ -55,19 +64,69 @@ var a
 if (a === 3){ // statement(expression){}
 
 }
-
+// normal function as function statement
+function greet(name){
+    console.log('hello' + name);
+}
 ```
-#Anonymous functions
+#Anonymous functions (arrow functions also)
 doesn't have a name property, but we can point it to a variable, which reffers to a memory
 `ARROW FUNCTIONS ARE ANONYMOUS`
 
 ```javascript
 anonymousGreet();
 
+// using a function expression
 var anonymousGreet = function(){
     console.log('przemy')
 }
 
 ```
-above returns `error` because function is assigned to variable, variable is setting in memory as undefined, so we have to
-call this function in code order execution after assignement to a variable
+above returns `error` because function is assigned to variable, variable is setting in memory as undefined, so we have to call this function in code order execution after assignement to a variable.
+
+When JS Engine hits line with the function - at that time it loads it to the memory
+# spread operator
+```javascript
+function spreadParameters(param1, param2, param3, ...other){
+    console.log(arguments) // returns  [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5, '5': 6 }
+    console.log(other); // returns 4,5,6 < other
+}
+spreadParameters(1,2,3,4,5,6); 
+```
+
+# function overloading
+just create another function and pass required parameters to root function
+you did that a lot of times
+# Immediately Invoked Function Expressions (IIFE)S
+immediately runs function, its just that.
+JS Engine creates and runs the function on the fly.
+```javascript
+
+var greeting = function(name) {
+    console.log('hello ' + name)
+}('przemy'); // << this brackets  invokes the function
+
+console.log(greeting); // returns variable with assigned value from function execution = "hello przemy" - it holds the `string`
+```
+## Factory Functions with Closures
+```javascript
+// function which returns a function and gets one parameter << this is a FACTORY FUNCTION
+function makeGreeting(language){
+    // using the fact of Closure, we can store language, and call second function later
+    return function(firstname, lastname){
+        if (language === 'en'){
+            console.log('hello ' + firstname + ' ' + lastname)
+        }
+        if (language === 'es'){
+            console.log('hola ' + firstname + ' ' + lastname)
+        }
+    }
+}
+
+var greetEnglish = makeGreeting('en');
+var greetSpanish = makeGreeting('es');
+// calling returned by makeGreeting function using Closures
+greetEnglish('przemy', 'hendels')
+greetSpanish('przemix', 'hendels')
+
+```
