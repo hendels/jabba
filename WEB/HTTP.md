@@ -18,7 +18,7 @@ it is used to deliver contents,  for example images videos audios documents
 
 ## request
 * Start line - METHOD / URI / HTTP VERSION
-* Headers - 
+* Headers - connection type, where (URI), which data type
 * Body
 
 ## response
@@ -29,7 +29,12 @@ it is used to deliver contents,  for example images videos audios documents
 # status codes:
 200 ok
 404 file not found // 400 for client
-503 // 500 for server
+400 bad request
+401 no authorization
+404 page not found
+500 server error
+503 service unavailable// 500 for server
+504 request timeout
 
 # SO:::
 we have the Request Response Cycle, when internet connection establishes, 
