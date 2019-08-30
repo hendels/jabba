@@ -20,3 +20,8 @@
 *   Render Queue:
     -   when you calling Execution Stack - browser don't render content
     -   when tasks are called from Task Queue - between each next call rerender happens `if people talk about don't block the event loop - they means that`
+
+
+// [TODO] - https://eddman.github.io/JavaScript/#/15
+
+* Promise is MICROTASK, it runs before TASK Queue

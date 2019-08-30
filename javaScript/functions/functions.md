@@ -85,7 +85,7 @@ var anonymousGreet = function(){
 above returns `error` because function is assigned to variable, variable is setting in memory as undefined, so we have to call this function in code order execution after assignement to a variable.
 
 When JS Engine hits line with the function - at that time it loads it to the memory
-# spread operator
+#### spread operator
 ```javascript
 function spreadParameters(param1, param2, param3, ...other){
     console.log(arguments) // returns  [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5, '5': 6 }
@@ -94,7 +94,7 @@ function spreadParameters(param1, param2, param3, ...other){
 spreadParameters(1,2,3,4,5,6); 
 ```
 
-# function overloading
+#### function overloading
 just create another function and pass required parameters to root function
 you did that a lot of times
 # Immediately Invoked Function Expressions (IIFE)S

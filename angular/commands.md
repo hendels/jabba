@@ -1,0 +1,2 @@
+- DBG build::: ng build --prod --progress false
+- ng new project_name - tworzy nowy projekt
